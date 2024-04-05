@@ -84,8 +84,8 @@ The **RRDB_PSNR** PSNR_oriented model trained with DF2K dataset (a merged datase
 ### Test models
 1. Clone this github repo.
 ```
-git clone https://github.com/xinntao/ESRGAN
-cd ESRGAN
+git clone https://github.com/srikar0805/ESRGAN_imageenhancement.git
+cd ESRGAN_imageenhancement
 ```
 2. Place your own **low-resolution images** in `./LR` folder. (There are two sample images - baboon and comic).
 3. Download pretrained models from [Google Drive](https://drive.google.com/drive/u/0/folders/17VYV_SoZZesU6mbxz2dMAIccSSlqLecY) or [Baidu Drive](https://pan.baidu.com/s/1-Lh6ma-wXzfH8NqeBtPaFQ). Place the models in `./models`. We provide two models with high perceptual quality and high PSNR performance (see [model list](https://github.com/xinntao/ESRGAN/tree/master/models)).
@@ -93,6 +93,10 @@ cd ESRGAN
 ```
 python test.py
 ```
+or
+```
+python3 enhancement.py --input_folder LR --output_folder results --model_path models/RRDB_ESRGAN_x4.pth
+``` 
 5. The results are in `./results` folder.
 ### Network interpolation demo
 You can interpolate the RRDB_ESRGAN and RRDB_PSNR models with alpha in [0, 1].
