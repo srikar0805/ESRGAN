@@ -283,7 +283,7 @@ import RRDBNet_arch as arch
 import argparse
 
 def enhance_images(input_folder="LR", output_folder="results/", model_path='models/RRDB_ESRGAN_x4.pth'):
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    device = torch.device('mps' if torch.backends.mps.is_available() else 'cpu')
 
     model = arch.RRDBNet(3, 3, 64, 23, gc=32)
     model.load_state_dict(torch.load(model_path), strict=True)
